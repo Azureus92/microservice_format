@@ -2,18 +2,15 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route("/generate", methods=["POST"])
+@app.route("/add_format", methods=["POST"])
 def handle_generate():
-    a = request.json.get("a")
-    b = request.json.get("b")
+    result = request.json.get("result")
 
-    return jsonify({
-        "result": a+b
-    })
+    return result
 
 @app.route("/ping", methods=["GET"])
 def handle_ping():
-    return "pong"
+    return "pong_format"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)

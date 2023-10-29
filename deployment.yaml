@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: markov-app-service
+  name: add-format-app-microservice
 spec:
   selector:
-    app: markov-app
+    app: add-format-app
   ports:
     - protocol: "TCP"
       port: 80
@@ -13,19 +13,19 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: markov-app
+  name: add-format-app
 spec:
   selector:
     matchLabels:
-      app: markov-app
+      app: add-format-app
   template:
     metadata:
       labels:
-        app: markov-app
+        app: add-format-app
     spec:
       containers:
-        - name: markov-service
-          image: docker.io/a1839055/markov-service
+        - name: add-format-microservice
+          image: docker.io/a1839055/add-format-microservice
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
