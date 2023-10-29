@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: add-format-microservice
-          image: docker.io/a1839055/add-format-microservice
+          image: docker.io/azure92/add-format-microservice
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
